@@ -64,8 +64,22 @@ function wpus_assets() {
 
 add_action( 'wp_enqueue_scripts', 'wpus_assets' );
 
+
+
+
+/**
+ * Подключение ACF PRO
+ */
+
+require_once get_template_directory() . '/includes/vendors/init.php';
+
 /**
  * Подключение файлов темы
  */
 
 require_once get_template_directory() . '/includes/helpers.php';
+require_once get_template_directory() . '/includes/pages/options.php';
+require_once get_template_directory() . '/includes/fields/init.php';
+
+
+
