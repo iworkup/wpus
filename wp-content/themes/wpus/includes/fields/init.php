@@ -33,3 +33,6 @@ if (function_exists('acf_add_local_field_group')):
     ));
 
 endif;
+
+require_once get_template_directory() . '/includes/fields/options.php';
+require_once get_template_directory() . '/includes/fields/options-header.php';

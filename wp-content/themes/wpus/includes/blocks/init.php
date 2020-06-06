@@ -45,3 +45,8 @@ function wpus_register_acf_block_types()
     ));
 
 }
+
+require_once get_template_directory() . '/includes/blocks/about.php';
+require_once get_template_directory() . '/includes/blocks/quote.php';
+require_once get_template_directory() . '/includes/blocks/team.php';
+require_once get_template_directory() . '/includes/blocks/vacancy.php';
