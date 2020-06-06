@@ -11,7 +11,7 @@ if (!function_exists('wpus_setup')) :
 
         register_nav_menus(
             array(
-                'menu-primary' => 'Главное меню',
+                'menu-header' => 'Верхнее меню',
                 'menu-footer' => 'Нижнее меню'
             )
         );
@@ -52,7 +52,7 @@ add_action('wp_enqueue_scripts', 'wpus_assets');
 
 
 /**
- * Подключение ACF PRO
+ * Подключение ACF PRO 5.8.11
  */
 
 require_once get_template_directory() . '/includes/vendors/init.php';
@@ -62,6 +62,8 @@ require_once get_template_directory() . '/includes/vendors/init.php';
  */
 
 require_once get_template_directory() . '/includes/helpers.php';
+
+require_once get_template_directory() . '/includes/menu.php';
 
 require_once get_template_directory() . '/includes/posts/init.php';
 
