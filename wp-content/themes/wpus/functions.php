@@ -67,6 +67,8 @@ require_once get_template_directory() . '/includes/menu.php';
 
 require_once get_template_directory() . '/includes/posts/init.php';
 
+require_once get_template_directory() . '/includes/taxonomies/init.php';
+
 require_once get_template_directory() . '/includes/fields/init.php';
 
 require_once get_template_directory() . '/includes/blocks/init.php';

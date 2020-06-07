@@ -53,9 +53,9 @@ register_post_type(
         //'capability_type'   => 'post',
         //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
         //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
-        'supports' => array('title', 'editor', 'thumbnail', 'page-attributes'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports' => array('title', 'editor', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         //'register_meta_box_cb' => null, // Provide a callback function that sets up the meta boxes for the edit form. Do remove_meta_box() and add_meta_box() calls in the callback. Default null.
-        'taxonomies' => array(),
+        'taxonomies' => array('book_authors'),
         //'has_archive' => true,
         //'rewrite' => true, // or array
         //'query_var' => true,
