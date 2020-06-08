@@ -63,6 +63,8 @@ require_once get_template_directory() . '/includes/vendors/init.php';
 
 require_once get_template_directory() . '/includes/helpers.php';
 
+require_once get_template_directory() . '/includes/hooks.php';
+
 require_once get_template_directory() . '/includes/menu.php';
 
 require_once get_template_directory() . '/includes/posts/init.php';

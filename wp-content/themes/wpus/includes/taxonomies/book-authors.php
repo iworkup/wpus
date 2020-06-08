@@ -36,7 +36,7 @@ register_taxonomy(
         //'query_var'             => $taxonomy, // название параметра запроса
         'capabilities' => array(),
         'meta_box_cb' => null, // html метабокса. callback: `post_categories_meta_box` или `post_tags_meta_box`. false — метабокс отключен.
-        'show_admin_column' => true, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
+        //'show_admin_column' => true, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
         'show_in_rest' => true, // добавить в REST API
         'rest_base' => null, // $taxonomy
         // '_builtin'              => false,

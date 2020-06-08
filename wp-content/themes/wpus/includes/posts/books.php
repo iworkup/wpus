@@ -56,7 +56,7 @@ register_post_type(
         'supports' => array('title', 'editor', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         //'register_meta_box_cb' => null, // Provide a callback function that sets up the meta boxes for the edit form. Do remove_meta_box() and add_meta_box() calls in the callback. Default null.
         'taxonomies' => array('book_authors'),
-        //'has_archive' => true,
+        'has_archive' => true,
         //'rewrite' => true, // or array
         //'query_var' => true,
         'can_export' => true, // Возможность экспорта этого типа записей.
