@@ -1,10 +1,12 @@
 <?php
 get_header();
 
+/**
+ * Запрос постов
+ */
 
 global $post;
-
-
+$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
 $myposts = get_posts(array(
 
     'cat' => null, // (число/строка/массив) ID категории. Можно указать несколько ID в строке через запятую или в массиве. Чтобы исключить рубрики укажите минус (-) перед ID категории - это исключит и все вложенные рубрики. Чтобы не исключить вложенные, используйте параметр category__not_in.
@@ -40,7 +42,7 @@ $myposts = get_posts(array(
     'post__not_in' => null, // (массив) Выберет все посты кроме указанных.
     'post_name__in' => null, // (массив) Выберет указанные посты. Указывать нужно post_name (slug) через запятую или в массиве. С версии 4.4.
 
-    'post_type' => null, // (строка/массив) Записи какого типа нужно показывать. По умолчанию: post. Но если указан параметр tax_query, то по умолчанию ставиться any.
+    'post_type' => 'books', // (строка/массив) Записи какого типа нужно показывать. По умолчанию: post. Но если указан параметр tax_query, то по умолчанию ставиться any.
 
     'meta_key' => null, // (строка) Ключ(название) произвольного поля.
     'meta_value' => null, // (строка) Значение произвольного поля.
@@ -67,11 +69,11 @@ $myposts = get_posts(array(
     'orderby' => null, // (строка/массив) Поля по которым можно сортировать посты.
 
     'nopaging' => null, // (логический) Отключит пагинацию, выведет все посты на одной странице.
-    'posts_per_page' => null, // (число) Количество постов на одной странице. Если выставить -1, то будут выведены все посты (без пагинации). С версии 2.1 заменяет параметр showposts. Установите параметр paged, если пагинация не работает, после использования этого параметра. Заметка: если запрос в feed части, WP перезаписывает этот параметр опцией posts_per_rss. Чтобы повлиять на вывод постов в фиде используйте фильтры post_limits или pre_option_posts_per_rss.
+    'posts_per_page' => 2, // (число) Количество постов на одной странице. Если выставить -1, то будут выведены все посты (без пагинации). С версии 2.1 заменяет параметр showposts. Установите параметр paged, если пагинация не работает, после использования этого параметра. Заметка: если запрос в feed части, WP перезаписывает этот параметр опцией posts_per_rss. Чтобы повлиять на вывод постов в фиде используйте фильтры post_limits или pre_option_posts_per_rss.
 
     'posts_per_archive_page' => null, // (число) Количество постов для страниц архивов: для страниц, которые удовлетворяют условиям is_archive() или is_search(). Этот параметр перезаписывает параметры "posts_per_page" и "showposts".
     'offset' => null, // (число) Сколько постов пропустить сверху выборки (верхний отступ). Внимание: Установка этого параметра переписывает/игнорирует параметр "paged" и ломает пагинацию (решение проблемы).
-    'paged' => null, // (число) Номер страницы пагинации. Показывает посты, которые в обычном режиме должны были быть показаны на странице пагинации Х. Переписывает параметр posts_per_page
+    'paged' => $paged, // (число) Номер страницы пагинации. Показывает посты, которые в обычном режиме должны были быть показаны на странице пагинации Х. Переписывает параметр posts_per_page
     'page' => null, // (число) Номер для статической домашней страницы. Показывает записи, которые в обычном режиме должны были быть показаны на странице пагинации Х главной статической странице (front page).
     'ignore_sticky_posts' => null, // (логический) Игнорировать прилепленные посты или нет (true/false). С версии 3.1. Заменяет параметр caller_get_posts.
 
@@ -97,15 +99,70 @@ $myposts = get_posts(array(
     'perm' => null, // (строка) Доступ пользователя.
 
 ));
+?>
 
-foreach ($myposts as $post) {
-    setup_postdata($post);
+<?php foreach ($myposts as $post) : ?>
+    <?php setup_postdata($post); ?>
 
-    // стандартный вывод записей
-}
+    <a href="<?= $post->guid ?>">
+        <h2><?= $post->post_title ?></h2>
+    </a>
+    <img src="<?php the_post_thumbnail_url(); ?>" width="100">
+    <br>
+    <?= get_the_term_list($post->ID, 'book_authors', '', ' | '); ?>
+    <br>
+    <?php
+    /*foreach (get_the_terms( $post->ID, 'book_authors' ) as $value) {
 
-wp_reset_postdata(); // сбрасываем переменную $post
+            echo '<a href="/' . $value->taxonomy . '/' . $value->slug . '/">' . $value->name . '</a> | ';
+
+        }*/
+    ?>
+
+    <?php the_time('j F Y'); ?>
+    <br>
+    <?php echo mb_strimwidth($post->post_excerpt, 0, 100, "..."); ?>
 
 
-echo 'books<br>';
-get_footer();
+    <?php //error_log(print_r($post, true)); ?>
+    <?php //error_log(print_r(get_the_terms( $post->ID, 'book_authors' ), true)); ?>
+
+
+    <pre>
+    <?php //var_dump($post->post_title); ?>
+    </pre>
+
+<?php endforeach; ?>
+
+<?php wp_reset_postdata(); // сбрасываем переменную $post ?>
+
+<?php
+
+
+$args = array(
+    'base'         => '%_%',
+    'format'       => '/page/%#%',
+    'total'        => $myposts->max_num_page,
+    'current'      => max( 1, get_query_var('paged') ),
+    'show_all'     => False,
+    'end_size'     => 3,
+    'mid_size'     => 3,
+    'prev_next'    => True,
+    'prev_text'    => __('« Назад'),
+    'next_text'    => __('Вперёд »'),
+    'type'         => 'plain',
+    'add_args'     => False,
+    'add_fragment' => '',
+    'before_page_number' => '',
+    'after_page_number'  => ''
+);
+
+echo paginate_links( $args );
+
+
+
+?>
+
+    <p>books</p>
+
+<?php get_footer(); ?>
