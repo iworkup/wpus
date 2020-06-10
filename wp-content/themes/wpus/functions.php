@@ -9,6 +9,8 @@ if (!function_exists('wpus_setup')) :
 
         add_theme_support('post-thumbnails');
 
+        add_theme_support('widgets');
+
         register_nav_menus(
             array(
                 'menu-header' => 'Верхнее меню',
@@ -74,6 +76,8 @@ require_once get_template_directory() . '/includes/taxonomies/init.php';
 require_once get_template_directory() . '/includes/fields/init.php';
 
 require_once get_template_directory() . '/includes/blocks/init.php';
+
+require_once get_template_directory() . '/includes/widgets/init.php';
 
 
 

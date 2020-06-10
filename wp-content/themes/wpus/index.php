@@ -47,6 +47,10 @@ elseif (is_singular('page')) {
 
 }
 
+if ( function_exists('dynamic_sidebar') ) {
+    dynamic_sidebar('wpus_sidebar');
+}
+
 
 /**
  * Если обращение к одной записе (запись, кастомная запись, страница, вложение)
