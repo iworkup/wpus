@@ -1,4 +1,5 @@
 <?php
+
 if (function_exists('acf_register_block_type')) {
 
     add_action('acf/init', 'wpus_register_acf_block_types');
@@ -9,20 +10,11 @@ function wpus_register_acf_block_types()
 {
 
     acf_register_block_type(array(
-        'name' => 'about',
-        'title' => __('О компании'),
-        'render_template' => 'about.php',
-        'category' => 'formatting',
-        'icon' => 'admin-comments',
-        'mode' => 'edit',
-    ));
-
-    acf_register_block_type(array(
         'name' => 'team',
         'title' => __('Команда'),
         'render_template' => 'team.php',
-        'category' => 'formatting',
-        'icon' => 'admin-comments',
+        'category' => 'faq-category',
+        'icon' => '',
         'mode' => 'edit',
     ));
 
@@ -30,8 +22,8 @@ function wpus_register_acf_block_types()
         'name' => 'quotes',
         'title' => __('Цитаты'),
         'render_template' => 'quote.php',
-        'category' => 'formatting',
-        'icon' => 'admin-comments',
+        'category' => 'links-category',
+        'icon' => '',
         'mode' => 'edit',
     ));
 
@@ -39,8 +31,8 @@ function wpus_register_acf_block_types()
         'name' => 'vacancies',
         'title' => __('Вакансии'),
         'render_template' => 'vacancy.php',
-        'category' => 'formatting',
-        'icon' => 'admin-comments',
+        'category' => 'news-category',
+        'icon' => '',
         'mode' => 'edit',
     ));
 
