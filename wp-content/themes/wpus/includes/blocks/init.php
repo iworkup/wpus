@@ -1,40 +1,18 @@
 <?php
-
 if (function_exists('acf_register_block_type')) {
 
-    add_action('acf/init', 'wpus_register_acf_block_types');
+    add_action('acf/init', function () {
 
-}
+        acf_register_block_type(array(
+            'name' => 'testing_test_block',
+            'title' => 'Тестовый блок',
+            'render_template' => 'includes/blocks/testing_test.php',
+            'category' => 'faq-category',
+            'icon' => '',
+            'mode' => 'edit',
+        ));
 
-function wpus_register_acf_block_types()
-{
-
-    acf_register_block_type(array(
-        'name' => 'team',
-        'title' => __('Команда'),
-        'render_template' => 'team.php',
-        'category' => 'faq-category',
-        'icon' => '',
-        'mode' => 'edit',
-    ));
-
-    acf_register_block_type(array(
-        'name' => 'quotes',
-        'title' => __('Цитаты'),
-        'render_template' => 'quote.php',
-        'category' => 'links-category',
-        'icon' => '',
-        'mode' => 'edit',
-    ));
-
-    acf_register_block_type(array(
-        'name' => 'vacancies',
-        'title' => __('Вакансии'),
-        'render_template' => 'vacancy.php',
-        'category' => 'news-category',
-        'icon' => '',
-        'mode' => 'edit',
-    ));
+    });
 
 }
 

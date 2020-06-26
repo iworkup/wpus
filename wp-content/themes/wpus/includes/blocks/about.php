@@ -4,13 +4,13 @@
  * Регистрация блока
  */
 
-if (function_exists('acf_register_block_type')):
+if (function_exists('acf_register_block_type')) {
 
     add_action('acf/init', function () {
 
         acf_register_block_type(array(
             'name' => 'about',
-            'title' => __('О компании'),
+            'title' => 'О компании',
             'render_template' => 'includes/blocks/about.php',
             'category' => 'home-category',
             'icon' => '',
@@ -19,13 +19,13 @@ if (function_exists('acf_register_block_type')):
 
     });
 
-endif;
+}
 
-if (function_exists('acf_add_local_field_group')):
+/**
+ * Регистрация полей для блока
+ */
 
-    /**
-     * О компании
-     */
+if (function_exists('acf_add_local_field_group')) {
 
     acf_add_local_field_group(array(
         'key' => 'about_block',
@@ -41,7 +41,6 @@ if (function_exists('acf_add_local_field_group')):
         ),
     ));
 
-
     acf_add_local_field(array(
         'key' => 'about_title',
         'name' => 'about_title',
@@ -49,6 +48,7 @@ if (function_exists('acf_add_local_field_group')):
         'type' => 'text',
         'parent' => 'about_block'
     ));
+
     acf_add_local_field(array(
         'key' => 'about_sub_title',
         'name' => 'about_sub_title',
@@ -56,6 +56,7 @@ if (function_exists('acf_add_local_field_group')):
         'type' => 'text',
         'parent' => 'about_block'
     ));
+
     acf_add_local_field(array(
         'key' => 'about_description',
         'name' => 'about_description',
@@ -63,6 +64,7 @@ if (function_exists('acf_add_local_field_group')):
         'type' => 'textarea',
         'parent' => 'about_block'
     ));
+
     acf_add_local_field(array(
         'key' => 'about_vacancy',
         'name' => 'about_vacancy',
@@ -70,6 +72,7 @@ if (function_exists('acf_add_local_field_group')):
         'type' => 'wysiwyg',
         'parent' => 'about_block'
     ));
+
     acf_add_local_field(array(
         'key' => 'about_button_title',
         'name' => 'about_button_title',
@@ -77,6 +80,7 @@ if (function_exists('acf_add_local_field_group')):
         'type' => 'text',
         'parent' => 'about_block'
     ));
+
     acf_add_local_field(array(
         'key' => 'about_button_url',
         'name' => 'about_button_url',
@@ -85,5 +89,6 @@ if (function_exists('acf_add_local_field_group')):
         'parent' => 'about_block'
     ));
 
+}
 
-endif;
+
