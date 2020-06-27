@@ -1,1 +1,1 @@
-<?= 'single other<br>' ?>
+<?php echo 'single other<br>' ?>

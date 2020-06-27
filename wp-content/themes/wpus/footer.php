@@ -1,4 +1,4 @@
 <?php wp_footer(); ?>
-<?= 'footer.php<br>' ?>
+<?php echo 'footer.php<br>' ?>
 </body>
 </html>

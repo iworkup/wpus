@@ -1,12 +1,11 @@
 <?php get_header() ?>
 
-<?= 'index.php<br>' ?>
+<?php echo 'index.php<br>' ?>
 <? //= get_option('page_for_posts') ?>
 
 
-<?= '<br>' ?>
+<?php echo '<br>' ?>
 <?php
-
 
 if (is_home()) {
 

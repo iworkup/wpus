@@ -107,13 +107,13 @@ $myposts = $query->query(array(
 <?php foreach ($myposts as $post) : ?>
     <?php setup_postdata($post); ?>
 
-    <a href="<?= $post->guid ?>">
-        <h2><?= $post->post_title ?></h2>
+    <a href="<?php echo $post->guid ?>">
+        <h2><?php echo $post->post_title ?></h2>
 </a>
 
     <img src="<?php the_post_thumbnail_url(); ?>" width="100">
     <br>
-<?= get_the_term_list($post->ID, 'book_authors', '', ' | '); ?>
+<?php echo get_the_term_list($post->ID, 'book_authors', '', ' | '); ?>
     <br>
     <?php
     /*foreach (get_the_terms( $post->ID, 'book_authors' ) as $value) {
@@ -125,7 +125,7 @@ $myposts = $query->query(array(
 
     <?php the_time('j F Y'); ?>
     <br>
-    <?= mb_strimwidth($post->post_excerpt, 0, 100, "..."); ?>
+    <?php echo mb_strimwidth($post->post_excerpt, 0, 100, "..."); ?>
 
 
     <?php //error_log(print_r($post, true)); ?>

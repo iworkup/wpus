@@ -1,1 +1,1 @@
-<?= 'posts page<br>' ?>
+<?php echo 'posts page<br>' ?>

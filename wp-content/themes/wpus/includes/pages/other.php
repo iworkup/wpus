@@ -1,1 +1,1 @@
-<?= 'other page<br>' ?>
+<?php echo 'other page<br>' ?>

@@ -8,5 +8,5 @@
 
 <body>
 <?php wp_body_open(); ?>
-<?= 'header.php<br>' ?>
+<?php echo 'header.php<br>' ?>
 

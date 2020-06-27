@@ -1,4 +1,4 @@
-<?= 'home page<br>' ?>
+<?php echo 'home page<br>' ?>
 
 <?php
 
