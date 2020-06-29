@@ -1,6 +1,6 @@
 <?php
 
-/**
+/*
  * Регистрация блока
  */
 
@@ -9,8 +9,8 @@ if (function_exists('acf_register_block_type')) {
     add_action('acf/init', function () {
 
         acf_register_block_type(array(
-            'name' => 'team_test_block',
-            'title' => 'Команда',
+            'name' => 'team-test-block-2347850', // нельзя использовать нижние подчёркивания
+            'title' => 'Команда 1234124',
             'render_template' => 'includes/blocks/team-display.php',
             'category' => 'faq-category',
             'icon' => '',
@@ -21,7 +21,7 @@ if (function_exists('acf_register_block_type')) {
 
 }
 
-/**
+/*
  * Регистрация полей для блока
  */
 
@@ -29,57 +29,58 @@ if (function_exists('acf_add_local_field_group')) {
 
     acf_add_local_field_group(array(
         'key' => 'team_test_group',
+        'title' => 'Тестовая команда',
         'fields' => array(
             array(
-                'key' => 'team_test_zagolovok_position',
-                'name' => 'team_test_zagolovok_position',
-                'label' => 'Заголовок',
-                'type' => 'text',
-            ),
-            array(
-                'key' => 'team_test_podzagolovok_position',
-                'name' => 'team_test_podzagolovok_position',
-                'label' => 'Подаголовок',
-                'type' => 'text',
-            ),
-            array(
-                'key' => 'team_test_repeater',
-                'name' => 'team_test_repeater',
+                'key' => 'team_test_repeater_2347850',
+                'name' => 'team_test_repeater_2347850',
                 'label' => 'Команда',
                 'type' => 'repeater',
                 'layout' => 'block',
                 'sub_fields' => array(
                     array(
-                        'key' => 'team_test_name',
-                        'name' => 'team_test_name',
+                        'key' => 'team_test_name_2347850',
+                        'name' => 'team_test_name_2347850',
                         'label' => 'Имя',
                         'type' => 'text',
                     ),
                     array(
-                        'key' => 'team_test_position',
-                        'name' => 'team_test_position',
+                        'key' => 'team_test_position_2347850',
+                        'name' => 'team_test_position_2347850',
                         'label' => 'Должность',
                         'type' => 'text',
                     ),
                     array(
-                        'key' => 'team_test_description',
-                        'name' => 'team_test_description',
+                        'key' => 'team_test_description_2347850',
+                        'name' => 'team_test_description_2347850',
                         'label' => 'Описание',
                         'type' => 'textarea',
                     ),
                     array(
-                        'key' => 'team_test_description_full',
-                        'name' => 'team_test_description_full',
+                        'key' => 'team_test_description_full_2347850',
+                        'name' => 'team_test_description_full_2347850',
                         'label' => 'Полное описание',
                         'type' => 'wysiwyg',
                     ),
                     array(
-                        'key' => 'team_test_image',
-                        'name' => 'team_test_image',
+                        'key' => 'team_test_image_2347850',
+                        'name' => 'team_test_image_2347850',
                         'label' => 'Фотография',
                         'type' => 'image',
                     ),
                 ),
+            ),
+            array(
+                'key' => 'team_test_zagolovok_position_2347850',
+                'name' => 'team_test_zagolovok_position_2347850',
+                'label' => 'Заголовок',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'team_test_podzagolovok_position_2347850',
+                'name' => 'team_test_podzagolovok_position_2347850',
+                'label' => 'Подаголовок',
+                'type' => 'text',
             ),
 
         ),
@@ -88,7 +89,7 @@ if (function_exists('acf_add_local_field_group')) {
                 array(
                     'param' => 'block',
                     'operator' => '==',
-                    'value' => 'acf/team_test_block',
+                    'value' => 'acf/team-test-block-2347850',
                 ),
             ),
         ),
