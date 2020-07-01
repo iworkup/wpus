@@ -28,59 +28,59 @@ if (function_exists('acf_register_block_type')) {
 if (function_exists('acf_add_local_field_group')) {
 
     acf_add_local_field_group(array(
-        'key' => 'team_test_group',
+        'key' => 'group_team_test_group',
         'title' => 'Тестовая команда',
         'fields' => array(
             array(
-                'key' => 'team_test_repeater_2347850',
-                'name' => 'team_test_repeater_2347850',
+                'key' => 'field_team_test_zagolovok_position_2347850',
+                'name' => 'field_team_test_zagolovok_position_2347850',
+                'label' => 'Заголовок',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'field_team_test_podzagolovok_position_2347850',
+                'name' => 'field_team_test_podzagolovok_position_2347850',
+                'label' => 'Подаголовок',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'field_team_test_repeater_2347850',
+                'name' => 'field_team_test_repeater_2347850',
                 'label' => 'Команда',
                 'type' => 'repeater',
                 'layout' => 'block',
                 'sub_fields' => array(
                     array(
-                        'key' => 'team_test_name_2347850',
-                        'name' => 'team_test_name_2347850',
+                        'key' => 'field_team_test_name_2347850',
+                        'name' => 'field_team_test_name_2347850',
                         'label' => 'Имя',
                         'type' => 'text',
                     ),
                     array(
-                        'key' => 'team_test_position_2347850',
-                        'name' => 'team_test_position_2347850',
+                        'key' => 'field_team_test_position_2347850',
+                        'name' => 'field_team_test_position_2347850',
                         'label' => 'Должность',
                         'type' => 'text',
                     ),
                     array(
-                        'key' => 'team_test_description_2347850',
-                        'name' => 'team_test_description_2347850',
+                        'key' => 'field_team_test_description_2347850',
+                        'name' => 'field_team_test_description_2347850',
                         'label' => 'Описание',
                         'type' => 'textarea',
                     ),
                     array(
-                        'key' => 'team_test_description_full_2347850',
-                        'name' => 'team_test_description_full_2347850',
+                        'key' => 'field_team_test_description_full_2347850',
+                        'name' => 'field_team_test_description_full_2347850',
                         'label' => 'Полное описание',
                         'type' => 'wysiwyg',
                     ),
                     array(
-                        'key' => 'team_test_image_2347850',
-                        'name' => 'team_test_image_2347850',
+                        'key' => 'field_team_test_image_2347850',
+                        'name' => 'field_team_test_image_2347850',
                         'label' => 'Фотография',
                         'type' => 'image',
                     ),
                 ),
-            ),
-            array(
-                'key' => 'team_test_zagolovok_position_2347850',
-                'name' => 'team_test_zagolovok_position_2347850',
-                'label' => 'Заголовок',
-                'type' => 'text',
-            ),
-            array(
-                'key' => 'team_test_podzagolovok_position_2347850',
-                'name' => 'team_test_podzagolovok_position_2347850',
-                'label' => 'Подаголовок',
-                'type' => 'text',
             ),
 
         ),
