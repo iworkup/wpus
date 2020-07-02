@@ -10,7 +10,7 @@ function wpus_custom_block_category( $default_categories, $post ) {
     /**
      * Указываем, для какого типа записи категория
      */
-    if ( $post->post_type !== 'books' ) {
+    if ( $post->post_type !== 'page' ) {
         return $default_categories;
     }
 
