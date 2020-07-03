@@ -49,3 +49,8 @@ function wpus_custom_block_category( $default_categories, $post ) {
     );
 
 }
+
+function my_deregister_scripts(){
+    wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );

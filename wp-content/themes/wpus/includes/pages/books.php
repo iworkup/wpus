@@ -1,7 +1,3 @@
-<?php get_header(); ?>
-
-<p>archive-books</p>
-
 <?php
 
 $query_args = array(
@@ -35,7 +31,7 @@ $total_pages_news = $news->max_num_pages;
 <?php wp_reset_postdata(); ?>
 
 
-    /* Пагинация */
+/* Пагинация */
 
 <?php
 
@@ -68,4 +64,3 @@ if ($total_pages > 1) :
 
 <?php endif; ?>
 
-<?php get_footer(); ?>

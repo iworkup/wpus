@@ -58,7 +58,7 @@ register_post_type(
         'taxonomies' => array('book_authors'),
         'has_archive' => true,
         //'rewrite' => true, // or array
-        //'query_var' => true,
+        'query_var' => true,
         'can_export' => true, // Возможность экспорта этого типа записей.
         'delete_with_user' => false, // Удалять записи этого типа принадлежащие пользователю при удалении пользователя. Если включена корзина, записи не удаляться, а поместятся в корзину.
         //'_builtin' => true, // FOR INTERNAL USE ONLY! True if this post type is a native or "built-in" post_type. Default false.

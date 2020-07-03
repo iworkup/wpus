@@ -1,16 +1,15 @@
 <?php
 
-
-/**
- * Регистрация страницы Настройки - Шапка
+/*
+ * Регистрация дочерней страницы настроек
  */
 
 if (function_exists('acf_add_options_page')):
 
     acf_add_options_sub_page(array(
-        'page_title' => 'Настройки верхней части сайта',
-        'menu_title' => 'Шапка',
-        'menu_slug' => 'theme_general_settings_header',
+        'page_title' => 'Дочерняя страница настроек',
+        'menu_title' => 'Дочерка',
+        'menu_slug' => 'theme_general_settings_subpage',
         'parent_slug' => 'theme_general_settings',
     ));
 
@@ -18,36 +17,36 @@ endif;
 
 if (function_exists('acf_add_local_field_group')):
 
-    /**
-     * Регистрация ACF для страницы Настройки - Шапка
+    /*
+     * Регистрация полей для дочерней страницы настроек
      */
 
     acf_add_local_field_group(array(
-        'key' => 'theme_general_settings_header_fields',
+        'key' => 'group_theme_general_settings_subpage',
         'title' => 'Основные данные',
         'fields' => array(
             array(
-                'key' => 'header_address',
-                'name' => 'header_address',
-                'label' => 'Адрес',
+                'key' => 'field_subpage_address',
+                'name' => 'subpage_address',
+                'label' => 'Дополнительный адрес',
                 'type' => 'text',
             ),
             array(
-                'key' => 'header_email',
-                'name' => 'header_email',
-                'label' => 'E-mail',
+                'key' => 'field_subpage_email',
+                'name' => 'subpage_email',
+                'label' => 'Дополнительный E-mail',
                 'type' => 'text',
             ),
             array(
-                'key' => 'header_copyright',
-                'name' => 'header_copyright',
-                'label' => 'Копирайт',
+                'key' => 'field_subpage_copyright',
+                'name' => 'subpage_copyright',
+                'label' => 'Дополнительный Копирайт',
                 'type' => 'text',
             ),
             array(
-                'key' => 'header_logotype',
-                'name' => 'header_logotype',
-                'label' => 'Логотип',
+                'key' => 'field_subpage_logotype',
+                'name' => 'subpage_logotype',
+                'label' => 'Дополнительный Логотип',
                 'type' => 'image',
             ),
         ),
@@ -56,7 +55,7 @@ if (function_exists('acf_add_local_field_group')):
                 array(
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'theme_general_settings_header',
+                    'value' => 'theme_general_settings_subpage',
                 ),
             ),
         ),

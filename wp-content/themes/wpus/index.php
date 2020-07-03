@@ -40,10 +40,6 @@ elseif (is_singular('page')) {
 
     require_once 'includes/pages/page.php';
 
-} else {
-
-    require_once 'includes/pages/single.php';
-
 }
 
 if ( function_exists('dynamic_sidebar') ) {

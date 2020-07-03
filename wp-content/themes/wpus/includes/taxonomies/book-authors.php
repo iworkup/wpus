@@ -1,11 +1,8 @@
 <?php
 
 register_taxonomy(
-
     'book_authors',
-
     array('books'),
-
     array(
         'label' => '', // определяется параметром $labels->name
         'labels' => array(
@@ -22,7 +19,6 @@ register_taxonomy(
             'new_item_name' => 'Добавить автора',
             'menu_name' => 'Авторы',
         ),
-
         'description' => '', // описание таксономии
         'public' => true,
         //'publicly_queryable'    => null, // равен аргументу public
@@ -41,7 +37,5 @@ register_taxonomy(
         'rest_base' => null, // $taxonomy
         // '_builtin'              => false,
         //'update_count_callback' => '_update_post_term_count',
-
     )
-
 );

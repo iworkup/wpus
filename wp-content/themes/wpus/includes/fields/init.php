@@ -1,7 +1,7 @@
 <?php
 
-/**
- * Поля ACF
+/*
+ * Подключение полей ACF
  */
 
 if (function_exists('acf_add_local_field_group')):
@@ -10,8 +10,8 @@ if (function_exists('acf_add_local_field_group')):
 
 endif;
 
-/**
- * Регистрация страниц настроек ACF и полей для них
+/*
+ * Подключение страниц настроек ACF
  */
 
 require_once get_template_directory() . '/includes/fields/options.php';
