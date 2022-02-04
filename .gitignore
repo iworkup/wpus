@@ -1,0 +1,14 @@
+/*
+.idea
+.vscode
+*.DS_Store
+*.gitignore
+!/.gitignore
+!/wp-content
+/wp-content/*
+!/wp-content/themes
+/wp-content/themes/*
+!/wp-content/themes/wpus
+/wp-content/themes/wpus/.idea
+/wp-content/themes/wpus/.vscode
+wp-content/themes/wpus/includes/vendors/acf/*

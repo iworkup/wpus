@@ -1,0 +1,1 @@
+<?php echo 'other page<br>' ?>
